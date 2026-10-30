@@ -11,7 +11,7 @@ import (
 	"vencordinstaller/buildinfo"
 )
 
-const ReleaseUrl = "https://api.github.com/repos/StellarosYT/Custom-Vencord/releases/tags/114c179"
+const ReleaseUrl = "https://api.github.com/repos/StellarosYT/Custom-Vencord/releases/latest"
 const InstallerReleaseUrl = "https://api.github.com/repos/StellarosYT/Vencord-Installer/releases/latest"
 
 var UserAgent = "VencordInstaller/" + buildinfo.InstallerGitHash + " (https://github.com/StellarosYT/Vencord-Installer)"
