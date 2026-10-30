@@ -10,7 +10,6 @@ import (
 	"errors"
 	"os"
 	"os/exec"
-	"path/filepath"
 	path "path/filepath"
 	"strings"
 )
@@ -29,9 +28,11 @@ func init() {
 		BaseDir = path.Join(dir, "..", "VencordData")
 	} else {
 		Log.Debug("Using UserConfig")
-		configDir := os.Getenv("XDG_CONFIG_HOME")
-		if configDir == "" {
-			configDir = filepath.Join(os.Getenv("HOME"), ".config")
+		configDir, err := os.UserConfigDir()
+		if err != nil {
+			FilesDirErr = err
+			Log.Error("Failed to determine user config directory", err)
+			return
 		}
 		BaseDir = path.Join(configDir, "Vencord")
 	}
