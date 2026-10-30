@@ -63,7 +63,7 @@ func GetGithubRelease(url, fallbackUrl string) (*GithubRelease, error) {
 
 		// GitHub has a very strict 60 req/h rate limit and some (mostly indian) isps block github for some reason.
 		// If that is the case, try our fallback at https://vencord.dev/releases/project
-		if isRateLimitedOrBlocked && !triedFallback {
+		if isRateLimitedOrBlocked && fallbackUrl != "" && !triedFallback {
 			Log.Error(fmt.Sprintf("Failed to fetch %s (status code %d). Trying fallback url %s", url, res.StatusCode, fallbackUrl))
 			return GetGithubRelease(fallbackUrl, fallbackUrl)
 		}
@@ -99,7 +99,7 @@ func InitGithubDownloader() {
 			GithubDoneChan <- GithubError == nil
 		}()
 
-		data, err := GetGithubRelease(ReleaseUrl, ReleaseUrlFallback)
+		data, err := GetGithubRelease(ReleaseUrl, "")
 		if err != nil {
 			GithubError = err
 			return

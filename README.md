@@ -1,12 +1,12 @@
 # Vencord Installer
 
-The Vencord Installer allows you to install [Vencord, the cutest Discord Desktop client mod](https://github.com/Vendicated/Vencord)
+This custom Vencord Installer installs and updates builds from [StellarosYT/Custom-Vencord](https://github.com/StellarosYT/Custom-Vencord), currently pinned to [release 114c179](https://github.com/StellarosYT/Custom-Vencord/releases/tag/114c179).
 
 ![image](https://user-images.githubusercontent.com/45497981/226734476-5fb42420-844d-4e27-ae06-4799118e086e.png)
 
 ## Usage
 
-See https://vencord.dev/download
+Install or repair Vencord with this installer to download the pinned custom build.
 
 ## Building from source
 

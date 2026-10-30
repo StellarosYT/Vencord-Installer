@@ -33,7 +33,7 @@ func init() {
 	go func() {
 		Log.Debug("Checking for Installer Updates...")
 
-		res, err := GetGithubRelease(InstallerReleaseUrl, InstallerReleaseUrlFallback)
+		res, err := GetGithubRelease(InstallerReleaseUrl, "")
 		if err != nil {
 			Log.Warn("Failed to check for self updates:", err)
 			SelfUpdateCheckDoneChan <- false
@@ -46,7 +46,7 @@ func init() {
 }
 
 func GetInstallerDownloadLink() string {
-	const BaseUrl = "https://github.com/Vencord/Installer/releases/latest/download/"
+	const BaseUrl = "https://github.com/StellarosYT/Vencord-Installer/releases/latest/download/"
 	switch runtime.GOOS {
 	case "windows":
 		filename := Ternary(buildinfo.UiType == buildinfo.UiTypeCli, "VencordInstallerCli.exe", "VencordInstaller.exe")

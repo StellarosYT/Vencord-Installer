@@ -511,8 +511,8 @@ func renderInstaller() g.Widget {
 			renderErrorCard(
 				DiscordYellow,
 				color.Black,
-				"**Github** and **vencord.dev** are the only official places to get Vencord. Any other site claiming to be us is malicious.\n"+
-					"If you downloaded from any other source, you should delete / uninstall everything immediately, run a malware scan and change your Discord password.",
+				"This installer downloads custom builds from **github.com/StellarosYT/Custom-Vencord**. These are not official Vencord builds. Only use releases from that repository; builds from other sources may be malicious.\n"+
+					"If you downloaded from another source, you should delete / uninstall everything immediately, run a malware scan and change your Discord password.",
 				90,
 			),
 		),
